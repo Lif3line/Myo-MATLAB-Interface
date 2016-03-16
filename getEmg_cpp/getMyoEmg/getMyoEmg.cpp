@@ -37,7 +37,7 @@ public:
 		}
 
 		GetSystemTimeAsFileTime(&ft_now);
-		temp_now = ((LONGLONG)ft_now.dwLowDateTime + ((LONGLONG)(ft_now.dwHighDateTime) << 32LL) + 116444736000000000LL); // time since UNIX epoch in 100ns resolution
+		temp_now = ((LONGLONG)ft_now.dwLowDateTime + ((LONGLONG)(ft_now.dwHighDateTime) << 32LL) - 116444736000000000LL); // time since UNIX epoch in 100ns resolution
 		ll_sec = temp_now / 10000000; // Get seconds (integer division)
 		ll_ms = (temp_now / 10000) - (ll_sec * 1000); // Get difference caused by truncation in integer division
 
