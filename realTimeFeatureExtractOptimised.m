@@ -6,7 +6,7 @@
 clear; clc; close all % House keep
 
 %% Genmeral Setup
-lineLength = 55;
+lineLength = 54;
 numChannels = 8;
 sampMax = 4000;
 windowLength = 40;
@@ -34,7 +34,7 @@ pause(1);
 FileEMG = fopen(fileNameEMG,'r'); 
 fseek(FileEMG,curPosition,-1); 
 fileDataRaw = fgetl(FileEMG);
-if fileDataRaw == -1 % 
+if fileDataRaw == -1 
     system(['taskkill /f /fi "WindowTitle eq  ' cmdWindowName '" /T & exit']) 
     close(gcf)
     disp('Data acquisition not active')
