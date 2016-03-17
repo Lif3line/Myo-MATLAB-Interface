@@ -1,6 +1,6 @@
 // Modified version of emg-data-sample.cpp: Copyright (C) 2013-2014 Thalmic Labs Inc.
 // Distributed under the Myo SDK license agreement. See LICENSE.txt for details.
-#include "stdafx.h""
+#include "stdafx.h"
 #include <array>
 #include <iostream>
 #include <fstream>
