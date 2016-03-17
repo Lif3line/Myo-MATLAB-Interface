@@ -23,7 +23,7 @@ fclose(FileEMG);
 
 system(['start /realtime "' cmdWindowName '" getMyoEmg.exe & exit &']) % Start (non-blocking) C thread
 
-figure(1) % Do after cmd call to bring to foreground
+figure(1) 
 set(gcf,'currentchar',']') % Used for exit on button press
 
 %% Pause for handshake with myo connect and for data collection to begin
