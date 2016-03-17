@@ -17,8 +17,7 @@ Only works on Windows.
 ## Notes on Visual Studio Project
 Uses a C++ executable built using Visual Studio 2015 Community Version which is included for reference. This will be run in a command prompt by the MATLAB script.
 
-If recompiling the project you'll either have to create a post-build event to copy the myo32.dll or manually place it in the output directory (currently a copy exists in debug). Example post-build event: 
-> copy DLL_PATH\myo32.dll myo32.dll
+If recompiling the project you'll have to do some additional set up rather than just opening the project; see [Myo SDK Website](https://developer.thalmic.com/docs/api_reference/platform/the-sdk.html) for further details of the SDK and how to use it as this will depend on operating system/compiler etc.
 
 ----
 ## Potential Limitations
