@@ -4,13 +4,16 @@
 ## Intro
 Simple interface demonstration for taking Myo EMG data in near real time and piping to MATLAB; script shows the data on a graph as it comes in along with the Mean Absolute Value Feature.
 
-Distributed under GNU GPL v3.0.
+* Distributed under a modified MIT Licence
+	* For academic works please reference with the following key information: "A, Hartwell (2016) Myo-MATLAB Interface"
 
-Only works on Windows.
+* Requires Windows (OS based high res timestamps).
+
+* Build using Myo SDK 0.9 and Myo Connect 1.01 
 
 ----
 ## Usage
-1. Get Myo Connect and ensure running correctly
+1. Get Myo Connect and ensure running correctly 
 2. Run realTimeFeatureExtractOptimised.m
 
 ----
@@ -32,4 +35,3 @@ Like any true hack (MATLAB and real time aren't things that generally go togethe
 * Modifying CLOSE\_COUNT\_MAX will allow MATLAB to read in bigger/smaller batches of data at a time but thorough testing on each system will need to be done to ensure stability with any use of the variable. Stripping out lines 47-52 will remove the close-open behaviour. keeping the file open permanently resulted in 73-74 new data point batches on my system which implies the file is updated (for external access) once every ~0.37s (Windows 10).
 
 # Have Fun ^^
-
