@@ -36,12 +36,11 @@ public:
             emgSamples[i] = emg[i];
         }
 
-        GetSystemTimeAsFileTime(&ft_now);
+        GetSystemTimeAsFileTime(&ft_now); // Time grabbed from windows since myo SDK specifies timestamp as from (unspecified) time 
         temp_now = ((LONGLONG)ft_now.dwLowDateTime + ((LONGLONG)(ft_now.dwHighDateTime) << 32LL) - 116444736000000000LL); // time since UNIX epoch in 100ns resolution
         ll_sec = temp_now / 10000000; // Get seconds (integer division)
         ll_ms = (temp_now / 10000) - (ll_sec * 1000); // Get difference caused by truncation in integer division
 
-        // printf("T: %" PRIu64 ".%" PRIu64 "\n", ll_sec, ll_ms); // Debug
         fprintf(emgFile, "%4i,%4i,%4i,%4i,%4i,%4i,%4i,%4i,%10" PRIu64 ".%03" PRIu64 "\n", emg[0], emg[1], emg[2], emg[3], emg[4], emg[5], emg[6], emg[7], ll_sec, ll_ms);
 
         closeCounter++; // Close-Open file to increase capture speed on MATLAB side
