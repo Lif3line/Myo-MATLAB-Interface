@@ -15,14 +15,13 @@ curPosition = 0;
 emgData = NaN([sampMax numChannels]); % Matrix for EMG data
 mavData = NaN([(sampMax - windowLength) numChannels]); % Matrix for MAV feature
 
-fileNameEMG = 'Emg.txt'; % File for data transmission; again stop judging ^^
+fileNameEMG = 'emg.txt'; % File for data transmission; again stop judging ^^
 cmdWindowName = 'EMG Gather';
 
 FileEMG = fopen(fileNameEMG,'w'); % Reset file
 fclose(FileEMG); 
 
 system(['start /realtime "' cmdWindowName '" getMyoEmg.exe & exit &']) % Start (non-blocking) C thread
-
 figure(1) % Do after cmd call to bring to foreground
 set(gcf,'currentchar',']') % Used for exit on button press
 
@@ -46,6 +45,7 @@ fclose(FileEMG);
 
 curSample = 1;
 lastSample = 1;
+
 while get(gcf,'currentchar') == ']' % While no button has been pressed
     FileEMG = fopen(fileNameEMG,'r'); 
     fseek(FileEMG,curPosition,-1); 
