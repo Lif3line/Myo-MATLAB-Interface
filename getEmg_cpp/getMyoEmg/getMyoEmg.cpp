@@ -10,10 +10,11 @@
 #include <stdio.h>
 #include <Windows.h>
 #include <inttypes.h>
-#include "myo/myo.hpp"
+
+#include <myo/myo.hpp>
 
 #define EMG_FILE "emg.txt"
-#define CLOSE_COUNT_MAX 10 // Close-Open file after this many interrupts to expediate reading on the other side #No_hacks
+#define CLOSE_COUNT_MAX 20 // Close-Open file after this many interrupts to expediate reading on the other side #No_hacks
 
 FILE * emgFile; // Globals is cleanest solution for speed
 FILETIME ft_now;

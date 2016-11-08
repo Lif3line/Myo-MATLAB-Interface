@@ -46,7 +46,7 @@ fclose(FileEMG);
 curSample = 1;
 lastSample = 1;
 
-while get(gcf,'currentchar') == ']' % While no button has been pressed
+while get(gcf,'currentchar')==']' % While no button has been pressed
     FileEMG = fopen(fileNameEMG,'r'); 
     fseek(FileEMG,curPosition,-1); 
 
